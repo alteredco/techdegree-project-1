@@ -20,8 +20,12 @@ for (let i=0; i<split_arr.length; i++) {
 }
 // ***converting arrays into objects and placing within a single array of objects
 let quotes = [];
-let tags = []
+let year = [];
+let tags = [];
 for(i=0; i < qts.length; i++) {
+  if(i == 25){
+    year.push(1975);
+  };
   //* FOR EXCEEDS: adding tags to quotes
   if (i <= 20) {
     tags.push("wisdom");
@@ -34,6 +38,7 @@ for(i=0; i < qts.length; i++) {
   let obj = {
     quote: qts[i],
     source: authors[i],
+    year: year[i],
     tag: tags[i]
   };
   quotes.push(obj);
@@ -52,9 +57,9 @@ function getRandomQuote() {
   function printQuote(message) {
     document.getElementById("quote-box").innerHTML= message;
   }
-  let output = "<p class='quote'>"+quotes[getRandomNum()].quote+"</p> <p class='source'>"+quotes[randNum].source+", tag: "+quotes[randNum].tag;
+  let output = "<p class='quote'>"+"“"+quotes[getRandomNum()].quote+"</p> <p class='source'>"+quotes[randNum].source+", tag: "+quotes[randNum].tag;
   // *add year if available
-  if (quotes[randNum].year){
+  if (quotes[randNum].year != undefined){
     output += ", year: "+quotes[randNum].year;
   }
   output +="<span class='citation'><a href='https://litemind.com/best-famous-quotes/'>Litemind</a></span></p>";

@@ -42,11 +42,11 @@ a:hover {
   position: absolute;
 }
 
-.quote:before {
+/* .quote:before {
   content: "“";
   top: .25em;
   left: -.5em;
-}
+} */
 
 .quote:after {
   content: "”";
